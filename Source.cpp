@@ -1,27 +1,22 @@
-﻿#include <iostream>
+﻿
+#include <iostream>
+#include <cmath>
 using namespace std;
 
+int largestCommonDivisor(int a, int b)
+{
+	for (int i = (a + b); i >= 1; i--)
+	{
+		if (a % i == 0 && b % i == 0) return i;
+	}
+}
+int largestCommonMultiple(int a, int b)
+{
+	return (a * b) / largestCommonDivisor(a, b);
+}
 int main()
 {
-	int n;
-	do {
-		cout << "Nhap n = ";
-		cin >> n;
-		if (n <= 0) cout << "Nhap lai...";
-	} while (n <= 0);
-	int dong = n;
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 1; j < dong; j++)
-		{
-			cout << " ";
-		}
-		for (int k = 2 * (dong - 1); k < 2 * n - 1; k++)
-		{
-			cout << "*";
-		}
-		dong--;
-		cout << endl;
-	}
-
+	int a = 12, b = 4;
+	cout << "UCLN: " << largestCommonDivisor(a, b) << endl;
+	cout << "BCNN: " << largestCommonMultiple(a, b);
 }
