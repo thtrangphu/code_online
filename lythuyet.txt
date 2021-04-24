@@ -1,0 +1,6 @@
+-cin là nhập dữ liệu từ bàn phím, nhận được đến kí tự "\n" hoặc khoảng trắng là dừng,dữ liệu được lưu trong bộ nhớ đệm
+-gets nếu bộ nhớ đệm k có gì thì mới kêu nhập còn k thì nó sẽ xuất hiện lỗi trôi lệnh, gets nhận hết mọi kí tự kể cả dấu "\n" và dấu cách
+-Lỗi trôi lệnh là vì khi sử dụng gets sau cin thì còn dư \n nên bỏ qua lệnh gets
+-Cách fix:
+cin.ignore()
+while(getchar()!='\n\);
