@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
-int doDai(char a[]){
+int doDai(char a[])
+{
 	int i = 0;
 	while (a[i] != NULL) i++;
 	return i;
