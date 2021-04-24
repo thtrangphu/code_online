@@ -19,6 +19,12 @@ void chuanHoa(char a[]){
 			i--;
 		}
 	}
+	for (int i = 0; i < doDai(a); i++)
+	{
+		if (a[i] == ' ' && (a[i+1] >= 'a' && a[i+1] <= 'z')) {
+			a[i + 1] -= 32;
+		}
+	}
 }
 int main() {
 	char a[100] = "             Hello      cac       ban              ";
