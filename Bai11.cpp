@@ -9,6 +9,12 @@ void xoa(char a[], int vt) {
 	int n = doDai(a);
 	for (int i = vt; i < n; i++) a[i] = a[i + 1];
 }
+void inThuong(char a[]){
+	for (int i = 0; i < doDai(a); i++) 
+		if (a[i] >= 'A' && a[i] <= 'Z')
+			a[i] += 32;
+}
+
 void chuanHoa(char a[]){
 	while (a[0] == ' ') xoa(a, 0);
 	while(a[doDai(a)-1] == ' ') xoa(a, doDai(a) - 1);
@@ -19,6 +25,7 @@ void chuanHoa(char a[]){
 			i--;
 		}
 	}
+	inThuong(a);
 	for (int i = 0; i < doDai(a); i++)
 	{
 		if (a[i] == ' ' && (a[i+1] >= 'a' && a[i+1] <= 'z')) {
