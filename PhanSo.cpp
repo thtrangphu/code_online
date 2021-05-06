@@ -52,6 +52,20 @@ PhanSo max(PhanSo p[], int n) {
 	}
 	return p[vt];
 }
+void themPhanSo(PhanSo p[], int& n, int vt, PhanSo x) {
+	for (int i = n; i > vt; i--) {
+		p[i].tu = p[i - 1].tu;
+		p[i].mau = p[i - 1].mau;
+	}
+	p[vt] = x;
+	n += 1;
+}
+void xoaPhanSo(PhanSo p[], int& n, int vt) {
+	for (int i = vt; i < n-1; i++) {
+		p[i] = p[i+1];
+	}
+	n--;
+}
 int boiChung(int x, int y) {
 	return x * y / uocChung(x, y);
 }
@@ -69,12 +83,6 @@ float tongPhanSo(PhanSo p[], int n) {
 	}
 	return tu * 1.0 / mauChung(p,n);
 }
-void themPhanSo(PhanSo p[], int& n, PhanSo x, int vt) {
-	/*for (int i = n; i > vt;i++) {
-		p[i]
-	}*/
-}
-
 int main() {
 	int n;
 	cout << "Nhap so luong phan so: ";
@@ -88,4 +96,15 @@ int main() {
 	cout << endl << "PHAN SO MAX CUA CAC PHAN SO\n";
 	xuat1(max(p, n));
 	cout << endl << "TONG PHAN SO\n"<<tongPhanSo(p, n);
+	themPhanSo(p, n, 0, { 1,2 });
+	cout << endl;
+	cout << "THEM PHAN SO\n";
+	xuatN(p, n);
+	cout << endl;
+	xoaPhanSo(p, n, 0);
+	cout << endl;
+	cout << "XOA PHAN SO\n";
+	xuatN(p, n);
+	cout << endl;
+
 }
