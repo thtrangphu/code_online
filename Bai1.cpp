@@ -26,6 +26,8 @@ void ghiFile(int a[], int n) {
 	ofstream f;
 	f.open("output.txt", ios_base::out);
 	f << timMax(a, n);
+	f.close();
+
 }
 void main()
 {
